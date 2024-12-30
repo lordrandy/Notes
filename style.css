@@ -204,14 +204,14 @@ body{
 
 .text-editor{
     /* background-color: rgb(230, 230, 230); */
-    min-height: 150vh;
+    /*min-height: 150vh;*/
     background-color: white;
     border-radius: 10px;
     padding: 2.5cm;/*20px*/
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
     width: 65%;
     /* margin: 30px 0px; */
-    aspect-ratio: 16/9;
+    aspect-ratio: 9/16;
 }
 
 
