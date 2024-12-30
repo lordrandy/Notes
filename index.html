@@ -1,0 +1,148 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="icon" type="image/x-icon" href="img/toolbar/logo.svg" style="color: blue;">
+    <title>Toto Notes</title>
+</head>
+<body>
+    <main>
+        <div class="text-editor-container">
+            <div class="toolbar-container">
+                <div class="header">
+                    <img src="img/toolbar/logo.svg" class="logo">
+                    <input type="text" class="file-name-input" value="New document">
+                </div>
+                <div class="categories">
+                    <button class="category-btn" value="file">File</button>
+                    <button class="category-btn" value="home">Home</button>
+                    <button class="category-btn" value="insert">Insert</button>
+                    <button class="category-btn" value="format">Format</button>
+                    <button class="category-btn" value="layout">Layout</button>
+                </div>
+                <div class="toolbar toolbar-file">
+                    <button class="save-as-btn" value="txt" title="Download as txt"><img src="img/toolbar/download.svg" alt></button>
+                    <button class="save-as-btn" value="pdf" title="Download as pdf"><img src="img/toolbar/pdf.svg" alt></button>
+                    <button class="print-btn" title="Print"><img src="img/toolbar/print.svg" alt></button>
+                    <hr>
+                    <button class="spellcheck-btn" title="Spell-check"><img src="img/toolbar/spell-check.svg" alt></button>
+                    <button class="show-code" title="Show Code"><img src="img/toolbar/code.svg" alt></button>
+                </div>
+                <div class="toolbar toolbar-home">
+                    <button data-command="undo"><img src="img/toolbar/undo.svg" alt></button>
+                    <button data-command="redo"><img src="img/toolbar/redo.svg" alt></button>
+                    <hr>
+                    <button data-command="copy"><img src="img/toolbar/copy.svg" alt></button>
+                    <button data-command="cut"><img src="img/toolbar/cut.svg" alt></button>
+                    <button data-command="paste"><img src="img/toolbar/paste.svg" alt></button>
+                    <hr>
+                    <button data-command="decreaseFontSize"><img src="img/toolbar/minus.svg" alt></button>
+                    <select class="font-size-selector" data-command="fontSize">
+                        <option value="1">8</option>
+                        <option value="2">10</option>
+                        <option value="3">11</option>
+                        <option value="4">13.5</option>
+                        <option value="5">18</option>
+                        <option value="6">24</option>
+                        <option value="7">36</option>
+                    </select>
+                    <button data-command="increaseFontSize"><img src="img/toolbar/plus.svg" alt></button>
+                    <br>
+                    <select class="font-family-selector" data-command="fontName">
+                        <option value="arial">Arial</option>
+                        <option value="calibri">Calibri</option>
+                        <option value="comic sans ms">Comic Sans MS</option>
+                        <option value="verdana">Verdana</option>
+                        <option value="tahoma">Tahoma</option>
+                        <option value="tahoma">Tahoma</option>
+                        <option value="trebuchet ms">Trebuchet MS</option>
+                        <option value="times new roman">Times New Roman</option>
+                        <option value="georgia">Georgia</option>
+                        <option value="garamond">Garamond</option>
+                        <option value="courier new">Courier New</option>
+                        <option value="brush script mt">Brush Script MT</option>
+                    </select>
+                    <label class="button">
+                        <img src="img/toolbar/foreground.svg" alt>
+                        <input type="color" data-command="foreColor" data-element="foreColor">
+                    </label>
+                    <label class="button">
+                        <img src="img/toolbar/highlighter.svg" alt>
+                        <input type="color" data-command="hiliteColor" data-element="backColor">
+                    </label>
+                    <hr>
+                    <button data-command="bold" title="Bold"><img src="img/toolbar/bold.svg" alt></button>
+                    <button data-command="italic" title="Italic"><img src="img/toolbar/italic.svg" alt></button>
+                    <button data-command="strikethrough" title="Strikethrough"><img src="img/toolbar/strikethrough.svg" alt></button>
+                    <button data-command="underline" title="Underline"><img src="img/toolbar/underline.svg" alt></button>
+                    <button data-command="removeFormat"><img src="img/toolbar/text-slash.svg" alt></button>
+                    <hr>
+                    <button data-command="justifyLeft" title="Justify left"><img src="img/toolbar/align-left.svg" alt></button>
+                    <button data-command="justifyCenter" title="Justify center"><img src="img/toolbar/align-center.svg" alt></button>
+                    <button data-command="justifyRight" title="Justify right"><img src="img/toolbar/align-right.svg" alt></button>
+                    <button data-command="justifyFull" title="Justify full"><img src="img/toolbar/align-justify.svg" alt></button>
+                    <button data-command="indent" title="Indent"><img src="img/toolbar/indent.svg" alt></button>
+                    <button data-command="outdent" title="Outdent"><img src="img/toolbar/outdent.svg" alt></button>
+                </div>
+                <div class="toolbar toolbar-insert">
+                    <button data-command="insertUnorderedList" title="Unordered list"><img src="img/toolbar/list-ul.svg" alt></button>
+                    <button data-command="insertOrderedList" title="Ordered list"><img src="img/toolbar/list-ol.svg" alt></button>
+                    <button data-command="createLink" title="Insert link"><img src="img/toolbar/link.svg" alt></button>
+                    <button data-command="insertImage" title="Insert image"><img src="img/toolbar/image.svg" alt></button>
+                    <!-- <button data-command="indent" title="Quote"><img src="img/toolbar/quote.svg" alt></button> -->
+                </div>
+                <div class="toolbar toolbar-format">
+                    <button data-command="bold" title="Bold"><img src="img/toolbar/bold.svg" alt></button>
+                    <button data-command="italic" title="Italic"><img src="img/toolbar/italic.svg" alt></button>
+                    <button data-command="strikethrough" title="Strikethrough"><img src="img/toolbar/strikethrough.svg" alt></button>
+                    <button data-command="underline" title="Underline"><img src="img/toolbar/underline.svg" alt></button>
+                    <button data-command="removeFormat"><img src="img/toolbar/text-slash.svg" alt></button>
+                    <hr>
+                    <button data-command="justifyLeft" title="Justify left"><img src="img/toolbar/align-left.svg" alt></button>
+                    <button data-command="justifyCenter" title="Justify center"><img src="img/toolbar/align-center.svg" alt></button>
+                    <button data-command="justifyRight" title="Justify right"><img src="img/toolbar/align-right.svg" alt></button>
+                    <button data-command="justifyFull" title="Justify full"><img src="img/toolbar/align-justify.svg" alt></button>
+                    <button data-command="indent" title="Indent"><img src="img/toolbar/indent.svg" alt></button>
+                    <button data-command="outdent" title="Outdent"><img src="img/toolbar/outdent.svg" alt></button>
+                    <hr>
+                    <button data-command="superscript" title="Exposant"><img src="img/toolbar/superscript.svg" alt></button>
+                    <button data-command="subscript" title="Indice"><img src="img/toolbar/subscript.svg" alt></button>
+                    <button title="Show all" class="show-all-btn"><img src="img/toolbar/paragraph.svg" alt></button>
+                </div>
+                <div class="toolbar toolbar-layout">
+                    <label>
+                        Left
+                        <input type="number" max="18.5" min="0" step="0.05" class="margin-left">
+                    </label>
+                    <label>
+                        Right
+                        <input type="number" max="18.5" min="0" step="0.05" class="margin-right">
+                    </label>
+                    <label>
+                        Top
+                        <input type="number" max="18.5" min="0" step="0.05" class="margin-top">
+                    </label>
+                    <label>
+                        Bottom
+                        <input type="number" max="18.5" min="0" step="0.05" class="margin-bottom">
+                    </label>
+                </div>
+            </div>            
+
+            <div class="editor-container">
+            <div class="text-editor" contenteditable="" spellcheck="false"></div>
+            </div>
+
+            <div class="info-bar">
+                <p class="word-counter" translate="yes"></p>
+                <p translate="yes">Spell-check : <span class="spellchecker"></span></p>
+            </div>
+
+        </div>
+    </main>
+    
+</body>
+</html>
