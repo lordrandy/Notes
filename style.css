@@ -212,6 +212,7 @@ body{
     width: 65%;
     /* margin: 30px 0px; */
     aspect-ratio: 9/16;
+    word-break: break-word;
 }
 
 
