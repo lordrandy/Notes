@@ -89,7 +89,7 @@ body{
 
 .toolbar{
     width: 95%;
-    max-height: 10vh;
+    /*max-height: 10vh;*/
     /*height: 7vh;*/
     display: flex;
     flex-wrap: wrap;
